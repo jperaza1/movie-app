@@ -3,15 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bit/akameco.styled-spinkit.internal.types": "^0.7.0",
+    "@bit/akameco.styled-spinkit.internal.util": "^0.7.0",
+    "@bit/akameco.styled-spinkit.wave-loading": "^0.7.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "antd": "^4.0.0",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

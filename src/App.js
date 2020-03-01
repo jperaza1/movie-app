@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Layout } from "antd";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MenuTop from "./components/MenuTop/MenuTop";
 
-function App() {
+//Pages
+import Home from "./pages/home";
+import NewMovies from "./pages/new-movies";
+import Popular from "./pages/popular";
+import Error404 from "./pages/error404";
+import Movie from "./pages/movie";
+import Search from "./pages/search";
+
+export default function App() {
+  const { Header, Content } = Layout;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <Router>
+        <Header>
+          <MenuTop />
+        </Header>
+
+        <Content>
+          <Switch>
+            <Router path="/" exact={true}>
+              <Home />
+            </Router>
+            <Router path="/new-movies" exact={true}>
+              <NewMovies />
+            </Router>
+            <Router path="/popular" exact={true}>
+              <Popular />
+            </Router>
+            <Router path="/movie/:id" exact={true}>
+              <Movie />
+            </Router>
+            <Router path="/search" exact={true}>
+              <Search />
+            </Router>
+            <Router path="*">
+              <Error404 />
+            </Router>
+          </Switch>
+        </Content>
+      </Router>
+    </Layout>
   );
 }
-
-export default App;
